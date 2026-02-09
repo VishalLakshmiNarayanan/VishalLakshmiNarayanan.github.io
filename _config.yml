@@ -6,9 +6,9 @@ timezone: America/Phoenix
 # jekyll-seo-tag settings
 # ↓ --------------------------
 title: Vishal Lakshmi Narayanan
-tagline: Data Science at ASU | AI & Preference Modeling
+tagline: Data Science at ASU | AI & Data Modeling
 description: >-
-  Technical explorations in Machine Learning, Alignment, and the math behind human preference.
+  Technical explorations in Machine Learning, Data Science and Statistics.
 
 # No trailing slash at the end
 url: "https://VishalLakshmiNarayanan.github.io" 
@@ -18,10 +18,10 @@ github:
 
 social:
   name: Vishal Lakshmi Narayanan
-  email: example@asu.edu
+  email: lvishal1607@gmail.com
   links:
     - https://github.com/VishalLakshmiNarayanan
-    # - https://www.linkedin.com/in/your-linkedin-id
+    - https://www.linkedin.com/in/vishal-lakshmi-narayanan
 
 # ↑ --------------------------
 
