@@ -1,45 +1,118 @@
 # The Site Configuration
+
+# Import the theme
 theme: jekyll-theme-chirpy
-lang: en
-timezone: America/Phoenix
 
-# jekyll-seo-tag settings
-# ↓ --------------------------
-title: Vishal Lakshmi Narayanan
-tagline: Data Science at ASU | AI & Data Modeling
-description: >-
-  Technical explorations in Machine Learning, Data Science and Statistics.
-
-# No trailing slash at the end
-url: "https://VishalLakshmiNarayanan.github.io" 
-
-github:
-  username: VishalLakshmiNarayanan
-
-social:
-  name: Vishal Lakshmi Narayanan
-  email: lvishal1607@gmail.com
-  links:
-    - https://github.com/VishalLakshmiNarayanan
-    - https://www.linkedin.com/in/vishal-lakshmi-narayanan
-
-# ↑ --------------------------
-
-theme_mode: dark # Professional dark mode by default
-
-# This pulls your GitHub profile picture as the sidebar avatar
-avatar: 'https://github.com/VishalLakshmiNarayanan.png'
-
-toc: true
-paginate: 10
+# Change the following value to '/PROJECT_NAME' ONLY IF your site type is GitHub Pages Project sites
+# and doesn't have a custom domain.
 baseurl: ""
 
-# ------------ Technical Settings for Math/LaTeX ------------------
+# The language of the webpage › http://www.lingoes.net/en/translator/langcode.htm
+# If it has the same name as one of the files in folder `_data/locales`, the layout language will also be changed,
+# otherwise, the layout language will use the default value of 'en'.
+lang: en
+
+# Change to your timezone › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
+timezone: America/Phoenix
+
+# jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
+# ↓ --------------------------
+
+title: Vishal Lakshmi Narayanan # the main title
+
+tagline: Data Scientist, Research Engineer, and AI Enthusiast | AI & Data models
+
+description: >-
+  Technical blog by Vishal Lakshmi Narayanan
+# fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
+
+
+github:
+  username: VishalLakshmiNarayanan # change to your github username
+
+
+
+social:
+  # Change to your full name.
+  # It will be displayed as the default author of the posts and the copyright owner in the Footer
+  name: Vishal Lakshmi Narayanan
+  email: lvishal@gmail.com # change to your email address
+  links:
+    # The first element serves as the copyright owner's link
+     # change to your twitter homepage
+    - https://github.com/VishalLakshmiNarayanan # change to your github homepage
+    # Uncomment below to add more social links
+    - https://www.linkedin.com/in/vishallaksh/
+google_site_verification: # fill in to your verification string
+
+# ↑ --------------------------
+# The end of `jekyll-seo-tag` settings
+
+google_analytics:
+  id: # fill in your Google Analytics ID
+  # Google Analytics pageviews report settings
+  pv:
+    proxy_endpoint: # fill in the Google Analytics superProxy endpoint of Google App Engine
+    cache_path: # the local PV cache data, friendly to visitors from GFW region
+
+# Prefer color scheme setting.
+#
+# Note: Keep empty will follow the system prefer color by default,
+# and there will be a toggle to switch the theme between dark and light
+# on the bottom left of the sidebar.
+#
+# Available options:
+#
+#     light  - Use the light color scheme
+#     dark   - Use the dark color scheme
+#
+theme_mode: # [light|dark]
+
+# The CDN endpoint for images.
+# Notice that once it is assigned, the CDN url
+# will be added to all image (site avatar & posts' images) paths starting with '/'
+#
+# e.g. 'https://cdn.com'
+img_cdn:
+
+# the avatar on sidebar, support local or CORS resources
+avatar: 'https://github.com/VishalLakshmiNarayanan.png'
+
+# boolean type, the global switch for TOC in posts.
+toc: true
+
+comments:
+  provider: giscus 
+  giscus:
+    repo: VishalLakshmiNarayanan/VishalLakshmiNarayanan.github.io
+    repo_id: R_kgDORMb9tA
+    category: General
+    category_id: DIC_kwDORMb9tM4C2G6C
+    mapping: pathname
+    strict: 0
+    input_position: bottom
+    lang: en
+    reactions_enabled: 1
+
+# Self-hosted static assets, optional › https://github.com/cotes2020/chirpy-static-assets
+assets:
+  self_host:
+    enabled: # boolean, keep empty means false
+    # specify the Jekyll environment, empty means both
+    # only works if `assets.self_host.enabled` is 'true'
+    env: # [development|production]
+
+pwa:
+  enabled: true # the option for PWA feature
+
+paginate: 10
+
+# ------------ The following options are not recommended to be modified ------------------
 
 kramdown:
   footnote_backlink: "&#8617;&#xfe0e;"
   syntax_highlighter: rouge
-  mathengine: mathjax
+  mathengine: mathjax # MANDATORY: This renders your Bradley-Terry/Plackett-Luce equations
   syntax_highlighter_opts:
     css_class: highlight
     block:
@@ -53,13 +126,13 @@ collections:
 
 defaults:
   - scope:
-      path: ""
+      path: "" 
       type: posts
     values:
       layout: post
-      comments: true
-      toc: true
-      math: true # Enables LaTeX math rendering globally
+      comments: true # Enables the Giscus box on your RLHF blog
+      toc: true 
+      math: true # Ensures math loads by default on all your technical posts
       permalink: /posts/:title/
   - scope:
       path: ""
@@ -74,13 +147,12 @@ sass:
 exclude:
   - "*.gem"
   - "*.gemspec"
-  - docs
   - tools
   - README.md
   - LICENSE
-  - purgecss.js
-  - "*.config.js"
-  - "package*.json"
+  - node_modules
+  - package*.json
+  - feed.xml # Keeps your site clean as requested
 
 jekyll-archives:
   enabled: [categories, tags]
